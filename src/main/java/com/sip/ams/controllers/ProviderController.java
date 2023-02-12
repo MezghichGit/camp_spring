@@ -5,7 +5,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.sip.ams.entities.Provider;
 
 import static com.sip.ams.AmsApplication.providers;
 @Controller
@@ -29,9 +32,13 @@ public class ProviderController {
 	}
 	
 	@PostMapping("/add")  // save provider in list
-	public String saveProvider()
+	//@ResponseBody
+	public String saveProvider(@RequestParam("nomprovider")String nom,@RequestParam("email")String email,@RequestParam("adresse")String adresse
+			)
 	{
-		return "";
+		Provider p = new Provider(nom, email, adresse);
+		providers.add(p);
+		return "redirect:list";
 	}
 
 }
