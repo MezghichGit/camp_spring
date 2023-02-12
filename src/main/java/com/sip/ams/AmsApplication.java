@@ -12,9 +12,9 @@ public class AmsApplication {
 	public static List<Provider> providers = new ArrayList<>();
 
 	public static void main(String[] args) {
-		Provider p1 = new Provider("Nokia","nokia@hotmail.fr","China");
-		Provider p2 = new Provider("Samsung","samsung@gmail.com","Korea");
-		Provider p3 = new Provider("HP","hp@gmail.com","USA");
+		Provider p1 = new Provider(1,"Nokia","nokia@hotmail.fr","China","Vente Smart Phone");
+		Provider p2 = new Provider(2,"Samsung","samsung@gmail.com","Korea","Vente Smart Phone et TV");
+		Provider p3 = new Provider(3,"HP","hp@gmail.com","USA","Vente PC");
 		providers.add(p1);
 		providers.add(p2);
 		providers.add(p3);

@@ -7,22 +7,50 @@ public class Provider extends Object {
 	private String email;
 	
 	private String adresse;
+	
+	private int id;
+	
+	private String description;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
 	public String getName() {
 		return name;
 	}
 
-	public Provider(String name, String email, String adresse) {
-		super();
-		//System.out.println(PI);
-		//info();
-		this.name = name;
-		this.email = email;
-		this.adresse = adresse;
-	}
+	
 
 	public Provider() {
 		super();
+	}
+
+	@Override
+	public String toString() {
+		return "Provider [id =" +id +", name=" + name + ", email=" + email + ", adresse=" + adresse + ",  description="
+				+ description + "]";
+	}
+
+	public Provider(int id,String name, String email, String adresse, String description) {
+		super();
+		this.name = name;
+		this.email = email;
+		this.adresse = adresse;
+		this.id = id;
+		this.description = description;
 	}
 
 	public void setName(String name) {
@@ -33,11 +61,7 @@ public class Provider extends Object {
 		return email;
 	}
 
-	@Override
-	public String toString() {
-		
-		return "Provider [name=" + name + ", email=" + email + ", adresse=" + adresse + "]";
-	}
+	
 
 	public void setEmail(String email) {
 		this.email = email;
