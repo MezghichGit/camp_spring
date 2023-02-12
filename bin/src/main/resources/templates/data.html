@@ -1,0 +1,28 @@
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" th:href="@{/main.css}"/>
+
+<img th:src="@{/images/spring-framework.png}"/>
+
+<h1 th:text="${trn}+ ' ' + ${adr}">quelque chose</h1>
+
+<h2 th:text="${adr}">quelque chose</h2>
+
+<ul>
+	<li th:each="name : ${names}" th:text="${name}">Salah</li>
+	
+</ul>
+
+<table align="center" border="1" class="table">
+	
+	<tr><th>Nom</th><th>Age</th><th>Téléphone</th><th>Adresse</th><th>Editer</th><th>Supprimer</th></tr>
+	<tr th:each="stagiaire : ${stagiaires}">
+		<td th:text="${stagiaire.nom}"></td>
+		<td th:text="${stagiaire.age}"></td>
+		<td th:text="${stagiaire.tel}"></td>
+		<td th:text="${stagiaire.adresse}"></td>
+		
+		<td><a href="#" class="btn  btn-warning">Editer</a></td>
+		<td><a href="#" class="btn btn-danger">Supprimer</a></td>
+	</tr>
+</table>
